@@ -32,10 +32,9 @@ public class ArcadeDriveCommand extends CommandBase {
     public void execute() {
 
                     drivetrainSubsystem.ArcadeDriveStraight(
-                            m_xboxController.getRawAxis(xboxAccelerateAxis)
-                                    - m_xboxController.getRawAxis(xboxBrakeAxis),
-                            -(m_xboxController.getRawAxis(xboxRotateAxis) * .9),
-                            navx.getAngle());
+                        -m_moveStick.getRawAxis(flightStickMoveAxis),
+                        m_rotateStick.getRawAxis(flightStickRotateAxis),
+                        navx.getAngle());
                 }
 
     }
